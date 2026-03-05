@@ -1,8 +1,8 @@
 import java.util.Locale;
 
 public class Point {
-    public float x;
-    public float y;
+    private float x;
+    private float y;
     @Override
     public String toString() {
         return "Point{" +
