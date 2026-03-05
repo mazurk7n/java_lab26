@@ -13,13 +13,28 @@ public class Main {
     points[3] = new Point(43F, 93F);
     points[4] = new Point(87F, 56F);
 
+    Point[] points2 = new Point[3];
+    points2[0] = new Point(8F, 7F);
+    points2[1] = new Point(34F, 23F);
+    points2[2] = new Point(56F, 79F);
 
 
     Polygon polygon = new Polygon(points);
         System.out.println(polygon);
         System.out.println(polygon.toSvg());
 
+    Polygon polygon2 = new Polygon(points2);
 
+    Polygon polygon3 = new Polygon(new Point[]{
+            new Point(8F, 7F),
+            new Point(33F, 12F),
+            new Point(21F, 53F),
+    });
+
+    SvgScene svg=new SvgScene();
+    svg.addPolygon(polygon);
+    svg.addPolygon(polygon2);
+    svg.addPolygon(polygon3);
 
 /*
     Point point2 = point.translated(2f, 2f);
