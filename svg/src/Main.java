@@ -10,11 +10,9 @@ public class Main {
     point.translate(point.getX(), point.getY());
         System.out.println(point);
 
-    Segment segment = new Segment();
-    segment.p=point;
-    segment.q=point2;
+    Segment segment = new Segment(point, point2);
         System.out.println(segment.length());
-
+        System.out.println(segment.toString());
     }
 
 }
