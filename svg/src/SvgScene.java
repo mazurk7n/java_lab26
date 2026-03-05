@@ -1,3 +1,5 @@
+import java.util.Locale;
+
 public class SvgScene {
 
     private Polygon[] polygons = new Polygon[3];
@@ -8,6 +10,16 @@ public class SvgScene {
         if (index==3){
             index=0;
         }
+    }
+
+    public String toSvg(){
+        StringBuilder polygonString = new StringBuilder();
+        for (var polygon: polygons){
+            if (polygon!=null){
+            polygonString.append(polygon.toSvg()).append("/n");
+        }}
+        return String.format(Locale.ENGLISH, <svg height="260" width="500" xmlns="http://www.w3.org/2000/svg">, polygonString)
+
     }
 
 }

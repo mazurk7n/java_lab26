@@ -31,11 +31,12 @@ public class Main {
             new Point(21F, 53F),
     });
 
-    SvgScene svg=new SvgScene();
-    svg.addPolygon(polygon);
-    svg.addPolygon(polygon2);
-    svg.addPolygon(polygon3);
+    SvgScene scene=new SvgScene();
+    scene.addPolygon(polygon);
+    scene.addPolygon(polygon2);
+    scene.addPolygon(polygon3);
 
+    System.out.println(scene.toSvg());
 /*
     Point point2 = point.translated(2f, 2f);
         System.out.println(point2);
