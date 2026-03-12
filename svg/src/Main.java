@@ -34,11 +34,11 @@ public class Main {
     });
 
     SvgScene scene=new SvgScene();
-    scene.addPolygon(polygon);
-    scene.addPolygon(polygon2);
-    scene.addPolygon(polygon3);
+    scene.addShape(polygon);
+    scene.addShape(polygon2);
+    scene.addShape(polygon3);
 
-    scene.addPolygon(
+    scene.addShape(
             Polygon.square(new Segment(
                     new Point(130F, 100F),
                     new Point(100F, 140F)),

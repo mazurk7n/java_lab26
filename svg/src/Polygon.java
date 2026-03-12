@@ -1,19 +1,16 @@
 import java.util.Arrays;
 import java.util.Locale;
 
-public class Polygon {
+public class Polygon extends Shape{
 
     public Point[] points;
-    private Style style;
 
 
     public Polygon(Point[] points) {
         this(points, new Style("transparent","black", 1.0));
-        //System.arraycopy(points, 0, this.points, 0, points.length);
     }
 
     public Polygon(Point[] points, Style style) {
-        //this.points = points;
         this.points = new Point[points.length];
         this.style=style;
         for (int i = 0; i < points.length; i++) {
@@ -42,6 +39,7 @@ public class Polygon {
                 "points=" + Arrays.toString(points) +
                 '}';
     }
+    @Override
     public String toSvg() {
         StringBuilder pointString = new StringBuilder();
         for (Point point : points){
