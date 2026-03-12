@@ -34,7 +34,8 @@ public class Main {
     });
 
     SvgScene scene=new SvgScene();
-    scene.addShape(polygon);
+    //scene.addShape(polygon);
+        scene.addShape(new Ellipse(new Point(100F, 100F), 100F, 140F, new Style("red", "green", 10.0)));
     scene.addShape(polygon2);
     scene.addShape(polygon3);
 
