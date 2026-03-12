@@ -4,15 +4,21 @@ import java.util.Locale;
 public class Polygon {
 
     public Point[] points;
+    private Style style;
+
 
     public Polygon(Point[] points) {
+        this(points, new Style("transparent","black", 1.0));
+        //System.arraycopy(points, 0, this.points, 0, points.length);
+    }
+
+    public Polygon(Point[] points, Style style) {
         //this.points = points;
         this.points = new Point[points.length];
-        for(int i = 0; i < points.length; i++){
+        this.style=style;
+        for (int i = 0; i < points.length; i++) {
             this.points[i] = new Point(points[i]);
         }
-
-        //System.arraycopy(points, 0, this.points, 0, points.length);
     }
 
     public Polygon(Polygon p) {
@@ -33,6 +39,6 @@ public class Polygon {
             point.getY();
             pointString.append(point.getX()).append(",").append(point.getY()).append(" ");
         }
-        return String.format(Locale.ENGLISH, "<polygon points=\"%s\" style=\"fill:lime;stroke:purple;stroke-width:3\" />", pointString.toString());
+        return String.format(Locale.ENGLISH, "<polygon points=\"%s\" style="+style.toSvg()+" />", pointString.toString());
         }
 }
