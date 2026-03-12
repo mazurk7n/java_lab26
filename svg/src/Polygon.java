@@ -25,6 +25,16 @@ public class Polygon {
         this(p.points);
     }
 
+    public static Polygon square(Segment segment, Style style){
+        Segment perp = segment.perpendicular();
+        Point[] points = new Point[4];
+        points[0]=segment.getP();
+        points[1]=perp.getP();
+        points[2]=segment.getQ();
+        points[3]=perp.getQ();
+        return new Polygon(points, style);
+    }
+
 
     @Override
     public String toString() {

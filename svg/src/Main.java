@@ -38,9 +38,20 @@ public class Main {
     scene.addPolygon(polygon2);
     scene.addPolygon(polygon3);
 
+    scene.addPolygon(
+            Polygon.square(new Segment(
+                    new Point(130F, 100F),
+                    new Point(100F, 140F)),
+                    new Style("red", "green", 3.0))
+    );
+
     System.out.println(scene.toSvg());
 
     scene.save("out.svg");
+
+    Segment segment = new Segment(new Point(3.0F, 0F), new Point(0F, 4.0F));
+    Segment perp = segment.perpendicular();
+        System.out.println(perp);
 
 /*
     Point point2 = point.translated(2f, 2f);
