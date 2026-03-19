@@ -31,5 +31,6 @@ public class Main {
         scene.addShape(pentagon);
         scene.addShape(ellipse);
         scene.save("result.svg");
+
     }
 }
