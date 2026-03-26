@@ -10,6 +10,7 @@ public class Polygon implements Shape{
         }
     }
 
+
     @Override
     public BoundingBox boundingBox() {
         double xMin = this.points[0].x();
