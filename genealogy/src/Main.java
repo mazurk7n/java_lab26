@@ -4,13 +4,22 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args){
+        List<Person> people=new ArrayList<>();
+        people.add(new Person("Mike", "Tyson", LocalDate.of(1966, 5, 18)));
+        people.add(new Person("Daniło", "Korzemiakin", LocalDate.of(2015, 5, 12)));
+        people.add(new Person("Muhammad", "Ali", LocalDate.of(1944, 1, 2)));
 
-        List<Person> people = new ArrayList<>();
-        people.add(new Person("Ts", "Gurt", LocalDate.of(1987, 3, 5)));
-        people.add(new Person("Hawk", "Tuah", LocalDate.of(1999, 7, 15)));
-        people.add(new Person("Paul", "Amedu", LocalDate.of(1983, 1, 7)));
-        people.get(0).adopt(people.get(1));
-        System.out.println(people.toString());
+        Person parent = people.get(0);
+        Person child = people.get(1);
+        System.out.println(parent.adopt(child));
+        System.out.println(parent.adopt(people.get(2)));
+        System.out.println(parent.getYoungestChild());
+
+        System.out.println(parent.getChildren());
+
+        Family family = new Family();
+        for(Person person: people)
+
 
     }
 }
