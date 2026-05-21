@@ -1,6 +1,7 @@
 package music;
 
 import java.util.Objects;
+import java.util.Optional;
 
 public class Song {
     private String artist;
@@ -32,4 +33,9 @@ public class Song {
         return length == song.length && Objects.equals(artist, song.artist) && Objects.equals(title, song.title);
     }
 
+    public static class Persistence {
+        public Optional<Song> read(int index){
+
+        }
+    }
 }
