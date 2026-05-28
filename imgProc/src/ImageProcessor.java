@@ -28,8 +28,27 @@ public class ImageProcessor {
 
                 img.setRGB(x, y, blue | (green << 8) | (red << 16));
             }
-        }
 
+
+            }
+
+    }
+    public void addBrightnessThreaded(int amount) throws InterruptedException {
+        int cores = Runtime.getRuntime().availableProcessors();
+        Thread[] threads = new Thread[cores];
+        for (int i = 0; i < cores; i++){
+            AddBrightnessWorker worker = new AddBrightnessWorker(
+                    this.img,
+                    amount,
+                    this.img.getHeight()/cores*i,
+                    i==cores-1? img.getHeight() : this.img.getHeight()/cores*(i+1)
+            );
+            threads[i]= new Thread(worker);
+            threads[i].start();
+        }
+        for (int i=0; i<cores; i++){
+            threads[i].join();
+        }
     }
 
 }
