@@ -5,7 +5,7 @@ public abstract class GraphicsItem {
     protected static double canvasHeight;
     protected double x;
     protected double y;
-    protected double witdth;
+    protected double width;
     protected double height;
     public static void setCanvasSize(double canvasWidth, double canvasHeight) {
         GraphicsItem.canvasWidth = canvasWidth;
@@ -22,8 +22,8 @@ public abstract class GraphicsItem {
         return y;
     }
 
-    public double getWitdth() {
-        return witdth;
+    public double getWidth() {
+        return width;
     }
 
     public double getHeight() {
